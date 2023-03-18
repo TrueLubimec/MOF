@@ -15,7 +15,7 @@
             CornerRadius="14">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="180"/>
 
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
@@ -30,7 +30,41 @@
                    HorizontalAlignment="Center"
                    Foreground="Wheat"
                    FontSize="35"/>
-        </Grid>
 
+            <StackPanel Grid.Row="1">
+                <RadioButton Content="home"
+                             Height="40"
+                             Foreground="Wheat"
+                             FontSize="20"
+                             Style="{StaticResource MenuButtonTheme}"/>
+
+                <RadioButton Content="tasks"
+                             Height="40"
+                             Foreground="Wheat"
+                             FontSize="20"
+                             Style="{StaticResource MenuButtonTheme}"/>
+
+                <RadioButton Content="feed"
+                             Height="40"
+                             Foreground="Wheat"
+                             FontSize="20"
+                             Style="{StaticResource MenuButtonTheme}"/>
+            </StackPanel>
+
+            <TextBox Width="170"
+                       Height="40"
+                       VerticalAlignment="Bottom"
+                       HorizontalAlignment="Center"
+                       Margin="5"
+                       Grid.Column="0"
+                       Grid.Row="2"
+                       Style="{StaticResource TextBoxTheme}"/>
+
+            <ContentControl Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="10"/>
+
+        </Grid>
+    
     </Border>
 </Window>
