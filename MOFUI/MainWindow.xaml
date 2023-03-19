@@ -4,19 +4,26 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MOFUI"
+        xmlns:viewModel="clr-namespace:MOFUI.MVVM.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" 
         Height="600" Width="900"
         WindowStyle="None"
-        ResizeMode="NoResize"
+        ResizeMode="CanResize"
         Background="Transparent"
         AllowsTransparency="True">
-    <Border Background="#FF5A5ACD"
-            CornerRadius="14">
+
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+    
+    <Border Background="#FF271A3E"
+            CornerRadius="14"
+            >
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="180"/>
-
+                    
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
@@ -29,22 +36,29 @@
                    VerticalAlignment="Bottom"
                    HorizontalAlignment="Center"
                    Foreground="Wheat"
-                   FontSize="35"/>
+                   FontSize="35"
+                   FontFamily="/Fonts/#BAHNSCHRIFT"/>
 
             <StackPanel Grid.Row="1">
                 <RadioButton Content="home"
+                             FontFamily="/Fonts/#BAHNSCHRIFT"
                              Height="40"
                              Foreground="Wheat"
                              FontSize="20"
-                             Style="{StaticResource MenuButtonTheme}"/>
+                             Style="{StaticResource MenuButtonTheme}"
+                             IsChecked="True"
+                             Command="{Binding HomeViewCommand}"/>
 
                 <RadioButton Content="tasks"
+                             FontFamily="/Fonts/#BAHNSCHRIFT"
                              Height="40"
                              Foreground="Wheat"
                              FontSize="20"
-                             Style="{StaticResource MenuButtonTheme}"/>
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding TasksViewCommand}"/>
 
                 <RadioButton Content="feed"
+                             FontFamily="/Fonts/#BAHNSCHRIFT"
                              Height="40"
                              Foreground="Wheat"
                              FontSize="20"
@@ -62,7 +76,8 @@
 
             <ContentControl Grid.Row="1"
                             Grid.Column="1"
-                            Margin="10"/>
+                            
+                            Content="{Binding CurrentView}"/>
 
         </Grid>
     
