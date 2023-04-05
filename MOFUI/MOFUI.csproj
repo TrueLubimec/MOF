@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,6 +56,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DataAccess.cs" />
+    <Compile Include="SQLHelper.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -127,6 +130,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Health %2819%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MOFLibrary\MOFLibrary.csproj">
+      <Project>{54d1f286-e664-436a-94f3-12617136027f}</Project>
+      <Name>MOFLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
