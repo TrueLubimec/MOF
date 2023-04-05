@@ -13,5 +13,15 @@ namespace MOFUI
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            InitializeComponent();
+        }
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            DataAccess db = new DataAccess();
+            db.GetPeople(lastNametText.Text);
+
+        }
     }
 }
